@@ -1,0 +1,80 @@
+.tile {
+  margin-bottom: rem(180);
+  position: relative;
+
+
+
+  .grid {
+    margin-top: rem(150);
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: rem(630);
+      height: rem(750);
+      border-radius: 50%;
+      background: rgba(169, 234, 254, 0.9);
+      filter: blur(300px);
+      backdrop-filter: blur(4px);
+      left: -25%;
+      top: -50%;
+      
+    }
+  }
+
+  .grid-item {
+    border-radius: rem(20);
+    overflow: hidden;
+    @include aic-jcc;
+    margin-bottom: rem(40);
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(35.39deg, #000000 0%, rgba(31, 31, 31, 0) 100%);
+    }
+
+    &--width1 {
+      width: calc(25% - 30px);
+
+      @include md {
+        width: calc(50% - 20px);
+      }
+    }
+
+    &--width2 {
+      width: calc(50% - 30px);
+
+      @include md {
+        width: calc(50% - 20px);
+      }
+    }
+
+  }
+
+  &__info {
+    position: absolute;
+    bottom: rem(20);
+    left: rem(20);
+    z-index: 1;
+    color: $wc;
+  }
+
+  &__name {
+    font-family: $inter;
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: rem(25);
+  }
+
+  &__kind {
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: rem(18);
+  }
+}

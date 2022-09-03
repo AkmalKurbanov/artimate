@@ -1,0 +1,58 @@
+.advatages {
+margin-bottom: rem(130);
+  &__block-figure {
+    img {
+      width: auto;
+      max-width: auto;
+    }
+  }
+
+  .swiper-container {
+    margin-top: rem(50);
+    @include aistr;
+
+    .swiper-wrapper {
+      height: auto;
+    }
+  }
+
+  &__block {
+    background-color: $wc;
+    border-radius: rem(17);
+    padding: rem(30) rem(20) rem(50);
+    height: 100%;
+    min-height: rem(340);
+    box-sizing: border-box;
+    
+  }
+
+  &__block-figure {
+    margin-left: rem(-10);
+    height: rem(70);
+  }
+
+  &__block-title {
+    font-weight: 700;
+    font-size: rem(30);
+    line-height: rem(36);
+    margin-bottom: rem(15);
+  }
+
+  &__block-desc {
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: rem(20);
+    margin-bottom: rem(15);
+  }
+
+  &__block-link {
+    position: absolute;
+    bottom: rem(25);
+    left: rem(20);
+    font-size: rem(19);
+    transition: $tr;
+    &:hover{
+      transform: translate(2px, -3px);
+    }
+  }
+}

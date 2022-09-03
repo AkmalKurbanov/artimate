@@ -7,7 +7,9 @@ html,
 body {
   height: 100%;
   position: relative;
-  // font-family: $helvetica;
+  background-color: $bc;
+  font-family: $roboto;
+  overflow-x: hidden;
 }
 
 a {
@@ -46,6 +48,7 @@ button {
     flex: 1 0 auto;
   }
 }
+
 // flex footer end
 
 // container
@@ -55,7 +58,7 @@ button {
   padding-left: rem(15px);
   margin-right: auto;
   margin-left: auto;
-  max-width: rem(1170px);
+  max-width: rem(1357);
   position: relative;
   box-sizing: border-box;
 
@@ -78,3 +81,80 @@ button {
 
 
 // container end
+
+.overhead {
+  font-weight: 700;
+  color: $wc;
+  margin-bottom: rem(14);
+  position: relative;
+  padding-left: rem(70);
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: '';
+    height: rem(1);
+    width: rem(50);
+    background-color: $mc;
+  }
+}
+
+.headeing {
+  color: $wc;
+  font-weight: 900;
+  font-size: rem(35);
+  font-family: $inter;
+  margin-bottom: rem(12);
+  z-index: 1;
+  position: relative;
+}
+
+.p_text {
+  font-size: rem(18);
+  color: $wc;
+  font-weight: 400;
+}
+
+.link {
+  color: $wc;
+  font-weight: 700;
+  font-size: rem(18);
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    &:after {
+      transform: translateY(-2px) translateX(2px);
+    }
+  }
+
+  &:after {
+    position: absolute;
+    content: '\e803';
+    font-family: icon;
+    left: calc(100% + 10px);
+    bottom: 0;
+    color: $mc;
+    font-size: rem(13);
+    transition: $tr;
+  }
+}
+
+.btn-wrap {
+  .btn {
+    background-color: #D9D9D9;
+    @include aic-jcc;
+    max-width: rem(275);
+    width: 100%;
+    font-weight: 700;
+    color: $bc;
+    font-size: rem(18);
+    min-height: rem(52);
+    outline: none;
+    cursor: pointer;
+  }
+}

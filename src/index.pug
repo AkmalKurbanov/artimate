@@ -5,11 +5,77 @@ block main
   .wrapper
     .content
       include includes/header/header
- 
+      .opening
+        .container
+          .opening__wrap
+            .opening__col
+              h2.headeing Предупреждаем...
+              h4.p_text мы готовы сотрудничать, только с теми, кто готов развиваться и делать не <br> как у всех, мы можем помочь сделать лучше чем у тех, лучше чем у других, <br> качественее многих
+              a(href="#").link Наша гордость
+              .status.f-18-bold.c-w мы сейчас онлайн
+            .opening__col
+              .opening__count-work 
+                .opening__count-work-item   
+                  .opening__count 58
+                  .c-w.f-20-bold Выполненных работ
+                .opening__count-work-item   
+                  .opening__count 12
+                  .c-w.f-20-bold В команде
+            .rotate-link.f-18-bold.c-w
+              p связаться с нами можно 
+              a(href="#").mc тут 
 
-     
+      .advatages
+        .container
+          .overhead в чем мы сильны
+          h2.headeing Текст про то, <br> насколько мы имба
+          .swiper-container.advatages-js
+            .swiper-wrapper
+              mixin advatage(img, title, desc, link)
+                .swiper-slide
+                  .advatages__block 
+                    .advatages__block-figure
+                      img(src="assets/img/slider"+img+".png", alt="") 
+                    h3.advatages__block-title=title 
+                    p.advatages__block-desc=desc
+                    a(href="#").advatages__block-link
+                      i.icon-arrow-up 
+              +advatage('1','Web Dev', 'Небольшой текст про услугу примерно на три сроки, но может быть и больше, зависит от нашей файнтазии. А так этот блок ровный все остальные нет)))')
+              +advatage('3','GADS/YD', 'Небольшой текст про услугу примерно на три сроки')
+              +advatage('2','Design', 'Небольшой текст про услугу примерно на три сроки')
+              +advatage('4','Marketing', 'Небольшой текст про услугу примерно на три сроки')
+              +advatage('1','Web Dev', 'Небольшой текст про услугу примерно на три сроки, но может быть и больше, зависит от нашей файнтазии. А так этот блок ровный все остальные нет)))')
+              +advatage('2','Design', 'Небольшой текст про услугу примерно на три сроки')
+              +advatage('3','GADS/YD', 'Небольшой текст про услугу примерно на три сроки')
+              +advatage('4','Marketing', 'Небольшой текст про услугу примерно на три сроки')
+
+      .tile 
+        .container
+          h3.overhead наша гордость
+          h2.headeing Мы скромные,<br>но выпосмотрите на эти шедевры
+          .grid
+            mixin tile(modify,img,name,kind)
+              a(href="#").grid-item(class="grid-item--width"+modify)
+                img(src="assets/img/masonry"+img+".jpg", alt="")
+                .tile__info   
+                  .tile__name=name
+                  .tile__kind=kind
+            +tile('1','1','Nurzaman','web support')
+            +tile('2','3','Stylum Photo Editor','ASO')
+            +tile('1','6','cash2u','GADS/YD')
+            +tile('1','2','Unimed','SEO')
+            +tile('1','5','Silkroad Shipping','web dev')
+            +tile('2','4','Ajax Sustem','web dev')
+          .btn-wrap.jcc
+            button.btn смотреть еще   
+
+
+
+
+          
+
 
     include includes/footer/footer
-
+ 
 
   include includes/scripts 

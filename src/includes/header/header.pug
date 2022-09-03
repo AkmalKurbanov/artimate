@@ -1,1 +1,24 @@
-header 1
+.mobile-nav
+  .mobile-nav__close
+header.header
+  .container 
+    .header__wrap 
+      .header__logo   
+        a(href="#")
+          img(src="assets/img/logo.svg", alt="") 
+      .header__nav 
+        ul 
+          mixin nav(item)
+            li  
+              a(href="#")=item   
+          +nav('Портфолио')
+          +nav('Блог')
+          +nav('Контакты')
+          +nav('Меню')
+          +nav('Полезное')
+          +nav('Меню')
+          +nav('Спасибо')
+        .hamburger 
+          i.icon-hamburger
+
+    

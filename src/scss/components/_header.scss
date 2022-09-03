@@ -1,1 +1,199 @@
-// .header {}
+.header {
+  margin-top: rem(60);
+
+  @include lg {
+    margin-top: rem(50);
+  }
+
+  @include md {
+    margin-top: rem(40);
+  }
+
+  @include sm {
+    margin-top: rem(30);
+  }
+
+  @include xs {
+    margin-top: rem(20);
+  }
+
+  &__wrap {
+    @include aic-jfcsb;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: rem(630);
+      height: rem(750);
+      border-radius: 50%;
+      background: rgba(169, 254, 203, 0.9);
+      filter: blur(300px);
+      backdrop-filter: blur(4px);
+      right: -25%;
+    }
+  }
+
+  &__logo {
+    max-width: rem(275);
+    width: 100%;
+    z-index: 1;
+
+    @include lg {
+      max-width: rem(170);
+    }
+
+    img {
+      margin-left: rem(-9);
+    }
+
+    a {
+      @include aic-jcc;
+    }
+  }
+
+  &__nav {
+    @include aic;
+    position: relative;
+    z-index: 1;
+
+
+    ul {
+      @include aic;
+      opacity: 0;
+      pointer-events: none;
+      transition: $tr;
+
+      @include sm {
+        display: none;
+      }
+
+      &.open {
+        opacity: 1;
+        pointer-events: inherit;
+      }
+
+      li {
+        margin-right: rem(50);
+
+        @include lg {
+          margin-right: rem(25);
+        }
+
+        @include md {
+          margin-right: rem(15);
+        }
+
+        @include sm {
+          margin-right: 0;
+        }
+
+        &:last-child {
+          margin-right: rem(30);
+
+          @include md {
+            margin-right: rem(15);
+          }
+
+          @include sm {
+            margin-right: 0;
+          }
+        }
+
+        a {
+          color: $wc;
+          transition: $tr;
+
+          @include lg {
+            font-size: rem(15);
+          }
+
+          @include md {
+            font-size: rem(13);
+          }
+
+          &:hover {
+            color: #A9FECB;
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      cursor: pointer;
+      color: $wc;
+      font-size: rem(22);
+      transition: $tr;
+      z-index: 10;
+
+      &:hover {
+        color: $mc;
+      }
+    }
+  }
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($bc, 0.9);
+  z-index: 9;
+  transition: $tr;
+  @include aic-jcc;
+  opacity: 0;
+  pointer-events: none;
+  transition: $tr;
+
+  &.open {
+    opacity: 1;
+    pointer-events: inherit;
+  }
+
+  &__close {
+    position: absolute;
+    top: rem(20);
+    right: rem(20);
+    width: rem(20);
+    height: rem(20);
+    @include aic-jcc;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      width: rem(20);
+      height: rem(2);
+      background-color: $wc;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  ul {
+    li {
+      text-align: center;
+      margin-bottom: rem(10);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: $wc;
+        font-size: rem(19);
+      }
+    }
+  }
+}

@@ -12,7 +12,8 @@
 // подключение сгенерированных иконок(fontello),
 // FontAwesome
 
-// @import "../assets/icons/fontello/--/--/";
+@import "../assets/icons/css/icon.css";
+@import "../../node_modules/swiper/swiper-bundle.min.css";
 // @import "../assets/icons/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css";
 
 //---------------------------------------------
@@ -22,9 +23,12 @@
 @import "fonts";
 @import "variables";
 @import "mixins/media";
+@import "mixins/flex";
+@import "mixins/fonts-params";
 
 
 //---------------------------------------------
+
 
 
 //---------------------------------------------
@@ -33,4 +37,7 @@
 
 @import "components/base";
 @import "components/header";
+@import "components/opening";
+@import "components/advatages";
+@import "components/tile";
 @import "components/footer";
